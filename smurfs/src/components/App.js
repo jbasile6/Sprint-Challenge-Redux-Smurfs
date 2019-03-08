@@ -3,6 +3,8 @@ import './App.css';
 
 import { connect } from 'react-redux';
 import { smurfFetch } from '../actions';
+
+import SmurfForm from './SmurfForm';
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -23,6 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
+        <SmurfForm />
         {this.props.smurfs.map((smurf, index) => {
           return (
             <div key={index}>
