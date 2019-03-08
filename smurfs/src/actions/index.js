@@ -42,6 +42,6 @@ export const smurfFetch = () => dispatch => {
     dispatch({
       type: FETCH_FAILURE,
       payload: err
-    })
+    });
   })
 }

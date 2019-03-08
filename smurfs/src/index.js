@@ -11,8 +11,7 @@ import { reducers } from './reducers';
 //***IMPORT REDUCER AND ADD IT TO STORE FNCT */
 
 const store = createStore(
-  reducers, // this is the most basic reducer. A function that returns and object. Replace it.
-  applyMiddleware(thunk, logger /* be sure to throw in the proper middlewares here*/)
+  reducers, applyMiddleware(thunk, logger)
 );
 
 ReactDOM.render(

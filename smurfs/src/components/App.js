@@ -11,17 +11,25 @@ import { smurfFetch } from '../actions';
  */
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
     this.props.smurfFetch();
+ 
   }
 
   render() {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
+         {this.props.smurfs.map(smurf => {
+          return (
+            <div>
+           <h2>SMURF</h2>
+            </div>
+          )
+        })} 
         
       </div>
     );

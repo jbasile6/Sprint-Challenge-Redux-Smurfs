@@ -31,24 +31,22 @@ export const reducers = (state = initialState, action) => {
     return {
       ...state,
       fetchingSmurfs: true
-    }
+    };
 
     case FETCH_SUCCESS:
     return {
       ...state,
       fetchingSmurfs: false,
-      smurfs: [...action.payload]
-    }
+      smurfs: [...state.smurfs, ...action.payload]
+    };
 
     case FETCH_FAILURE:
     return {
       ...state,
       fetchingSmurfs: false,
       error: action.payload 
-    }
+    };
     default:
-    return {
-      state
-    }
+    return state;
   }
 }
