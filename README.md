@@ -22,9 +22,18 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions are specific types on information that transfer data from the application to the store. Once, in the store, reducers define how the app's state changes in response to the actions sent to the store. Once the state is changed according to the action the reducer receives, it will send the new state back to the application to render a new page.  The store holds the entire state tree of the application. The state tree can only be changed by the actions dispatched to it.
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global and component state is local. Every component has access to the application state but only components and their children have access to the component state.
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is used to handle asynchronous operations inside our action creators. It makes the reducer flow asynchronous so we can make API calls from our action creators.
+
 
 ## Project Set Up
 
