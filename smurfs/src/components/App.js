@@ -16,21 +16,23 @@ class App extends Component {
 
   componentDidMount() {
     this.props.smurfFetch();
- 
+
   }
 
   render() {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
-         {this.props.smurfs.map(smurf => {
+        {this.props.smurfs.map((smurf, index) => {
           return (
-            <div>
-           <h2>SMURF</h2>
+            <div key={index}>
+              <h2>{smurf.name} </h2>
+              <p><strong>Description:</strong>{'    '}{smurf.name} is a {smurf.age} year old Smurf that stands {smurf.height} tall.</p>
+             
             </div>
           )
-        })} 
-        
+        })}
+
       </div>
     );
   }
