@@ -2,7 +2,7 @@
   Be sure to import in all of the action types from `../actions`
 */
 
-import { SMURF_FETCH, FETCH_SUCCESS, FETCH_FAILURE } from '../actions';
+import { SMURF_FETCH, FETCH_SUCCESS, FETCH_FAILURE, ADD_SMURF } from '../actions';
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -46,6 +46,18 @@ export const reducers = (state = initialState, action) => {
       fetchingSmurfs: false,
       error: action.payload 
     };
+
+    case ADD_SMURF:
+    return {
+      ...state,
+      smurfs:[
+        ...state.smurfs, {
+          name: action.name,
+          age: action.age,
+          height: action.height
+        }
+      ]
+    }
     default:
     return state;
   }

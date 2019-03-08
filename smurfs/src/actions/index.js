@@ -27,21 +27,43 @@ export const DELETE_SMURF = 'DELETE_SMURF';
 */
 
 export const smurfFetch = () => dispatch => {
-  dispatch({ 
-    type: SMURF_FETCH 
+  dispatch({
+    type: SMURF_FETCH
   });
   axios
-  .get('http://localhost:3333/smurfs')
-  .then( res => {
-    dispatch({ 
-      type: FETCH_SUCCESS,
-      payload: res.data
-    });
-  })
-  .catch( err => {
-    dispatch({
-      type: FETCH_FAILURE,
-      payload: err
-    });
-  })
+    .get('http://localhost:3333/smurfs')
+    .then(res => {
+      dispatch({
+        type: FETCH_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: FETCH_FAILURE,
+        payload: err
+      });
+    })
 }
+
+export const addSmurf = (nameInput, ageInput, heightInput) => dispatch => {
+  axios
+    .post('http://localhost:3333/smurfs', {
+      name: nameInput,
+      age: ageInput,
+      height: heightInput
+    })
+    .then(res => {
+      dispatch({
+        type: ADD_SMURF,
+        name: nameInput,
+        age: ageInput,
+        height: heightInput
+
+      })
+    })
+    .catch(err => {
+      console.error(err);
+    })
+}
+
